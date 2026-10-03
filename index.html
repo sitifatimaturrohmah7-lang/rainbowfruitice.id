@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Rainbow Fruit Ice | Warna Alami, Rasa Buah Asli</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #fffaf3;
+            color: #29352f;
+            line-height: 1.6;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 250, 243, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #eeeeee;
+        }
+
+        .navbar {
+            max-width: 1150px;
+            margin: auto;
+            padding: 18px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: #ed6b72;
+        }
+
+        .menu {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: #29352f;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .menu a:hover {
+            color: #ed6b72;
+        }
+
+        /* ================= HERO ================= */
+
+        .hero {
+            max-width: 1150px;
+            margin: auto;
+            padding: 80px 25px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 8px 15px;
+            border-radius: 30px;
+            background: white;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .hero h1 {
+            font-size: clamp(42px, 6vw, 75px);
+            line-height: 1;
+            margin: 25px 0;
+            letter-spacing: -2px;
+        }
+
+        .hero h1 span {
+            color: #ed6b72;
+        }
+
+        .hero p {
+            color: #68736d;
+            font-size: 18px;
+            max-width: 600px;
+        }
+
+        .hero-buttons {
+            margin-top: 30px;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 14px 23px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .button-dark {
+            background: #29352f;
+            color: white;
+        }
+
+        .button-light {
+            background: white;
+            color: #29352f;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+        }
+
+        .button:hover {
+            transform: translateY(-3px);
+        }
+
+        .hero-image {
+            background: white;
+            padding: 14px;
+            border-radius: 35px;
+            box-shadow: 0 20px 45px rgba(0,0,0,0.10);
+            transform: rotate(1deg);
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 430px;
+            object-fit: cover;
+            border-radius: 25px;
+        }
+
+        /* ================= SECTION ================= */
+
+        section {
+            padding: 80px 25px;
+        }
+
+        .container {
+            max-width: 1150px;
+            margin: auto;
+        }
+
+        .section-title {
+            max-width: 700px;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-size: 42px;
+            margin: 10px 0;
+        }
+
+        .section-title p {
+            color: #68736d;
+        }
+
+        /* ================= ABOUT ================= */
+
+        .about-box {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .about-card {
+            background: white;
+            padding: 30px;
+            border-radius: 25px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.07);
+        }
+
+        .about-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .about-card p {
+            color: #68736d;
+        }
+
+        /* ================= MENU ================= */
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-7px);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .product-content {
+            padding: 25px;
+        }
+
+        .product-content h3 {
+            font-size: 25px;
+            margin-bottom: 7px;
+        }
+
+        .ingredients {
+            color: #777;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .product-content p {
+            color: #68736d;
+            font-size: 15px;
+        }
+
+        /* WARNA MENU */
+
+        .red {
+            border-top: 7px solid #ed6b72;
+        }
+
+        .tropical {
+            border-top: 7px solid #f4c84b;
+        }
+
+        .fresh {
+            border-top: 7px solid #77b878;
+        }
+
+        .prices {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .price-small,
+        .price-large {
+            padding: 9px 14px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .price-small {
+            background: #f1f1f1;
+        }
+
+        .price-large {
+            background: #29352f;
+            color: white;
+        }
+
+        /* ================= VIDEO ================= */
+
+        .video-section {
+            background: #29352f;
+            color: white;
+        }
+
+        .video-section .section-title p {
+            color: #d5ddd8;
+        }
+
+        .video-container {
+            background: #151c18;
+            padding: 15px;
+            border-radius: 30px;
+        }
+
+        video {
+            width: 100%;
+            max-height: 600px;
+            border-radius: 22px;
+            background: black;
+        }
+
+        .video-info {
+            padding: 15px 5px 5px;
+            color: #cbd3ce;
+            font-size: 14px;
+        }
+
+        /* ================= ORDER ================= */
+
+        .order-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .contact-card {
+            background: white;
+            padding: 35px;
+            border-radius: 28px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+        }
+
+        .contact-card h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .contact-item {
+            padding: 16px 0;
+            border-bottom: 1px solid #eeeeee;
+        }
+
+        .contact-item:last-child {
+            border-bottom: none;
+        }
+
+        .contact-label {
+            color: #777;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: bold;
+        }
+
+        .contact-value {
+            font-weight: bold;
+            margin-top: 4px;
+        }
+
+        .contact-value a {
+            color: #29352f;
+            text-decoration: none;
+        }
+
+        /* ================= CTA ================= */
+
+        .cta {
+            padding: 40px;
+            border-radius: 30px;
+            background: linear-gradient(
+                135deg,
+                #ffe1e4,
+                #fff0bc,
+                #e3f3e2
+            );
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .cta h2 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .cta p {
+            color: #68736d;
+            margin-bottom: 25px;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #29352f;
+            color: white;
+            padding: 35px 25px;
+        }
+
+        .footer-content {
+            max-width: 1150px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-content p {
+            color: #cbd3ce;
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 850px) {
+
+            .hero {
+                grid-template-columns: 1fr;
+                padding-top: 50px;
+            }
+
+            .products {
+                grid-template-columns: 1fr;
+            }
+
+            .about-box {
+                grid-template-columns: 1fr;
+            }
+
+            .order-section {
+                grid-template-columns: 1fr;
+            }
+
+            .menu {
+                display: none;
+            }
+
+            .hero-image img {
+                height: 350px;
+            }
+
+            .section-title h2 {
+                font-size: 34px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<nav>
+    <div class="navbar">
+
+        <div class="logo">
+            <span>RAINBOW</span> FRUIT ICE
+        </div>
+
+        <ul class="menu">
+            <li><a href="#home">Beranda</a></li>
+            <li><a href="#about">Tentang</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#video">Video</a></li>
+            <li><a href="#order">Pesan</a></li>
+        </ul>
+
+    </div>
+</nav>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+    <div>
+
+        <span class="badge">
+            FRESH FRUIT ICE
+        </span>
+
+        <h1>
+            Kenapa <span>Rainbow</span> Fruit Ice?
+            <br>
+            Warna Alami, Rasa Buah Asli.
+        </h1>
+
+        <p>
+            Rainbow Fruit Ice adalah es buah dalam kemasan plastik panjang
+            seperti es lilin dengan perpaduan buah pilihan yang menghasilkan
+            rasa manis, segar, dan menyenangkan.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#menu" class="button button-dark">
+                Lihat Menu
+            </a>
+
+            <a href="#order" class="button button-light">
+                Pesan Sekarang
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="hero-image">
+
+        <!-- GANTI NAMA FILE JIKA FOTO KAMU BERBEDA -->
+        <img
+            src="produk-rainbow.jpg"
+            alt="Rainbow Fruit Ice dalam plastik panjang seperti es lilin"
+        >
+
+    </div>
+
+</section>
+
+
+<!-- ================= TENTANG ================= -->
+
+<section id="about">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span class="badge">
+                TENTANG PRODUK
+            </span>
+
+            <h2>
+                Fresh, colorful, dan menyegarkan.
+            </h2>
+
+            <p>
+                Rainbow Fruit Ice menghadirkan perpaduan buah dengan
+                karakter rasa yang berbeda dalam bentuk es lilin panjang
+                yang praktis dan menyegarkan.
+            </p>
+
+        </div>
+
+
+        <div class="about-box">
+
+            <div class="about-card">
+
+                <h3>Buah Pilihan</h3>
+
+                <p>
+                    Setiap varian menggunakan perpaduan buah dengan
+                    karakter rasa yang berbeda.
+                </p>
+
+            </div>
+
+
+            <div class="about-card">
+
+                <h3>3 Varian Rasa</h3>
+
+                <p>
+                    Red Rainbow, Tropical Rainbow, dan Fresh Rainbow
+                    dengan karakter rasa masing-masing.
+                </p>
+
+            </div>
+
+
+            <div class="about-card">
+
+                <h3>2 Pilihan Ukuran</h3>
+
+                <p>
+                    Size kecil Rp2.500 dan size besar Rp5.000.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= MENU PRODUK ================= -->
+
+<section id="menu">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span class="badge">
+                MENU PRODUK
+            </span>
+
+            <h2>
+                Pilih Rainbow favoritmu.
+            </h2>
+
+            <p>
+                Tiga perpaduan buah dengan rasa yang berbeda.
+            </p>
+
+        </div>
+
+
+        <div class="products">
+
+
+            <!-- RED RAINBOW -->
+
+            <div class="product-card red">
+
+                <div class="product-image">
+
+                    <img
+                        src="produk-rainbow.jpg"
+                        alt="Red Rainbow"
+                    >
+
+                </div>
+
+
+                <div class="product-content">
+
+                    <h3>
+                        Red Rainbow
+                    </h3>
+
+                    <div class="ingredients">
+                        Stroberi • Buah Naga Merah • Mangga
+                    </div>
+
+                    <p>
+                        Perpaduan stroberi, buah naga merah,
+                        dan mangga dengan rasa manis, segar,
+                        dan sedikit asam.
+                    </p>
+
+
+                    <div class="prices">
+
+                        <span class="price-small">
+                            Kecil · Rp2.500
+                        </span>
+
+                        <span class="price-large">
+                            Besar · Rp5.000
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- TROPICAL RAINBOW -->
+
+            <div class="product-card tropical">
+
+                <div class="product-image">
+
+                    <img
+                        src="produk-rainbow.jpg"
+                        alt="Tropical Rainbow"
+                    >
+
+                </div>
+
+
+                <div class="product-content">
+
+                    <h3>
+                        Tropical Rainbow
+                    </h3>
+
+                    <div class="ingredients">
+                        Mangga • Nanas • Melon
+                    </div>
+
+                    <p>
+                        Perpaduan mangga, nanas, dan melon
+                        dengan rasa manis dan segar serta
+                        sensasi buah tropis.
+                    </p>
+
+
+                    <div class="prices">
+
+                        <span class="price-small">
+                            Kecil · Rp2.500
+                        </span>
+
+                        <span class="price-large">
+                            Besar · Rp5.000
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- FRESH RAINBOW -->
+
+            <div class="product-card fresh">
+
+                <div class="product-image">
+
+                    <img
+                        src="produk-rainbow.jpg"
+                        alt="Fresh Rainbow"
+                    >
+
+                </div>
+
+
+                <div class="product-content">
+
+                    <h3>
+                        Fresh Rainbow
+                    </h3>
+
+                    <div class="ingredients">
+                        Semangka • Melon • Buah Naga Putih
+                    </div>
+
+                    <p>
+                        Perpaduan semangka, melon, dan buah naga
+                        putih dengan rasa manis, ringan,
+                        dan menyegarkan.
+                    </p>
+
+
+                    <div class="prices">
+
+                        <span class="price-small">
+                            Kecil · Rp2.500
+                        </span>
+
+                        <span class="price-large">
+                            Besar · Rp5.000
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= VIDEO ================= -->
+
+<section class="video-section" id="video">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span class="badge">
+                VIDEO PRODUK
+            </span>
+
+            <h2>
+                Lihat Rainbow Fruit Ice lebih dekat.
+            </h2>
+
+            <p>
+                Saksikan tampilan produk Rainbow Fruit Ice.
+            </p>
+
+        </div>
+
+
+        <div class="video-container">
+
+            <!--
+                SIMPAN VIDEO DENGAN NAMA:
+                video-rainbow.mp4
+
+                LALU LETAKKAN DI FOLDER YANG SAMA
+                DENGAN FILE HTML INI.
+            -->
+
+            <video
+                controls
+                poster="produk-rainbow.jpg"
+            >
+
+                <source
+                    src="video-rainbow.mp4"
+                    type="video/mp4"
+                >
+
+                Browser kamu tidak mendukung video HTML5.
+
+            </video>
+
+
+            <div class="video-info">
+
+                Video Rainbow Fruit Ice —
+                Fresh • Fruity • Colorful
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PEMESANAN ================= -->
+
+<section id="order">
+
+    <div class="container">
+
+        <div class="order-section">
+
+
+            <div class="contact-card">
+
+                <h3>
+                    Pesan Rainbow Fruit Ice
+                </h3>
+
+
+                <div class="contact-item">
+
+                    <div class="contact-label">
+                        Admin
+                    </div>
+
+                    <div class="contact-value">
+                        Suci Putri Rasdian
+                    </div>
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    <div class="contact-label">
+                        WhatsApp
+                    </div>
+
+                    <div class="contact-value">
+
+                        <a href="https://wa.me/6287787752453">
+
+                            087787752453
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    <div class="contact-label">
+                        Instagram
+                    </div>
+
+                    <div class="contact-value">
+
+                        <a
+                            href="https://instagram.com/rainbowfruitice.id"
+                            target="_blank"
+                        >
+
+                            @rainbowfruitice.id
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="cta">
+
+                <h2>
+                    Ready to taste the rainbow?
+                </h2>
+
+                <p>
+                    Hubungi admin untuk melakukan pemesanan
+                    Rainbow Fruit Ice.
+                </p>
+
+
+                <a
+                    class="button button-dark"
+                    href="https://wa.me/6287787752453?text=Halo%20Rainbow%20Fruit%20Ice%2C%20saya%20ingin%20memesan."
+                >
+
+                    Chat Admin
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-content">
+
+        <div>
+            <strong>
+                RAINBOW FRUIT ICE
+            </strong>
+
+            <p>
+                Warna Alami, Rasa Buah Asli.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <p>
+                Instagram:
+                @rainbowfruitice.id
+            </p>
+
+            <p>
+                Admin:
+                Suci Putri Rasdian
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+</body>
+</html>
